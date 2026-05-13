@@ -2,9 +2,10 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  // ⚠️ 改成你自己的服务器地址
-  static const String baseUrl = 'http://localhost:3000';
+  // ⚠️ 已为你更新为你的实际服务器地址
+  static const String baseUrl = 'https://www.customcompanion.xyz';
 
+  /// 提交预约信息，返回支付链接
   static Future<Map<String, dynamic>> submitBooking({
     required String name,
     required String email,
@@ -32,7 +33,7 @@ class ApiService {
         'order_id': orderId ?? '',
         'session_price_usd': priceUsd ?? 29,
         'session_price_cny': priceCny ?? 203,
-        'website': '',
+        'website': '', // honeypot
       }),
     );
 
